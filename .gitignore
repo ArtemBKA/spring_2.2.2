@@ -2,8 +2,8 @@ $ git status
     [...]
     # Untracked files:
     [...]
-    .idea
-    target
+    /.idea/*
+    /target/*
     #       Documentation/foo.html
     #       Documentation/gitignore.html
     #       file.o
