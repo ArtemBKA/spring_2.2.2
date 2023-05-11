@@ -8,6 +8,7 @@ import java.util.List;
 @Component
 public class CarServiceImpl implements CarService{
     List<Car> cars = new ArrayList<>();
+    private static final int DEFAULT_SIZE = 5;
 
     public CarServiceImpl() {
         cars.add(new Car(false, 1111, "VAZ 2101"));
@@ -18,7 +19,8 @@ public class CarServiceImpl implements CarService{
     }
 
     @Override
-    public List<Car> getCars(int size) {
+    public List<Car> getCars(Integer size) {
+        size = ((size == null || size >= 5) ? DEFAULT_SIZE : size);
         return cars.stream().limit(size).toList();
     }
 
